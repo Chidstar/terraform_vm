@@ -2,6 +2,7 @@ resource "google_compute_instance" "default" {
 	name = "${var.name}"
 	machine_type = "${var.machine_type}"
 	zone = "${var.zone}"
+	tags = "${var.tags}"
 	boot_disk {
 		initialize_params {
 			image = "${var.image}"
@@ -22,9 +23,9 @@ resource "google_compute_instance" "default" {
 			user = "${var.sshUser}"
 			private_key = "${file("${var.prikeydir}")}"
 		}
-		scripts = [
-			"${var.scripts}"
-		]
+#		scripts = [
+#			"${var.scripts}"
+#		]
 	}
 
 }

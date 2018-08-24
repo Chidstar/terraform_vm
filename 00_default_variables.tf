@@ -1,3 +1,11 @@
+variable "projectid" {
+	default = ""
+}
+
+variable "credentials" {
+	default = "~/.gcp/terraform_key.json"
+}
+
 variable "name" {
 	type = "string"
 	default = "default"
@@ -22,6 +30,18 @@ variable "network" {
 	default = "default"
 }
 
+variable "allowed_port" {
+	default = [
+	  "9000"
+	  ]
+}
+variable "tags" {
+	default = [
+	  "defaulttag"
+	  ]
+}
+
+
 variable "sshUser" {
 	default = "terraform"
 }
@@ -36,8 +56,23 @@ variable "prikeydir" {
 
 variable "scripts" {
 	default = [ 
-		"/home/vagrant/terraform_vm/scripts/python_server",
-		"home/vagrant/terraform_vm/scripts/git_inst"
-	]
+	  ""
+	  ]
 }
 	
+variable "packages" {
+	default = [
+	  "wget",
+	  "unzip"
+	]
+}
+
+variable "package_manager" {
+	default = "yum"
+}
+
+variable "install_packages" {
+	default = {
+	  "yum" = "sudo yum install -y"
+	}
+}

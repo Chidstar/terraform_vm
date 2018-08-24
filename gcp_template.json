@@ -4,7 +4,7 @@
 	  "type": "googlecompute",
 	  "account_file": "/home/vagrant/.gcp/terraform_key.json",
 	  "project_id": "hybrid-saga-214108",
-	  "source_image": "centos-7",
+	  "source_image_family": "centos-7",
 	  "ssh_username": "packer",
 	  "zone": "europe-west2-c",
 	  "image_name": "chid-centos-{{timestamp}}" 
@@ -17,8 +17,8 @@
 	},
 	{
 	  "type": "shell",
-	  "inline": "/home/vagrant/terraform_vm/scripts/python_server"
-	}
+	  "script": "/home/vagrant/terraform_vm/scripts/install_jenkins"
+	  }
 	]
 }
 
