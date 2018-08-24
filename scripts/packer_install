@@ -1,8 +1,6 @@
 #!/bin/bash
 #application="packer"
-curl -O https://releases.hashicorp.com/packer/1.2.5/packer_1.2.5_linux_amd64.zip
-sudo yum install -y unzip
-mkdir ~/varant/terraform_vm/packer
-sudo unzip -d /usr/local/ packer_1.2.5_linux_amd64.zip
-sudo ln -s /usr/local/bin/packer.io
-
+sudo yum install -y wget unzip
+wget -O /tmp/packer.zip https://releases.hashicorp.com/packer/1.2.5/packer_1.2.5_linux_amd64.zip
+sudo unzip /tmp/packer.zip -d /opt/packer
+sudo ln -s /opt/packer/packer /usr/bin/packer.io
