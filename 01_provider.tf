@@ -1,5 +1,5 @@
 provider "google" {
-	credentials = "${file("~/.gcp/terraform_key.json")}"
+	credentials = "${file("/vagrant/hybrid-saga-214108-d7002f950ddc.json")}"
 	project = "hybrid-saga-214108"
 	region = "europe-west2"
 }
